@@ -1,8 +1,12 @@
-# Chor • Police • Dakat • Babu — 4-player online game
+# Chor • Police • Dakat • Babu — 4-player pass-and-play game
 
-A complete mobile-friendly multiplayer web game, deployable to Vercel. Each of the 4 players uses their own phone or computer. The host creates a room and shares a link; everyone receives a **private role**. Only the Police can submit guesses. The server validates guesses and updates everyone's scores. Includes in-room chat, an invite link, and endless rounds.
+A mobile-friendly, self-contained game for four people sharing one device. Players take turns privately viewing a secret role; the Police then guesses the Chor and Dakat. The game tracks scores and supports endless rematches. No account, database, environment variables, or setup scripts are needed to play this version.
 
-## Before you begin
+The repository also includes an optional Supabase schema for a future online multiplayer version. It is not used by the current app.
+
+## Optional online multiplayer setup
+
+The current app is pass-and-play and does not connect to Supabase. The following setup is only for a future online multiplayer implementation.
 
 You need **two free services**:
 
@@ -83,7 +87,7 @@ The raw tables and all roles are **not readable directly by website visitors**. 
 ## Folder structure
 
 - `index.html` — page metadata and app entry
-- `src/main.js` — screens, room join/create logic, chat, rendering, and polling
+- `src/main.js` — pass-and-play screens, private role handoff, guesses, and scoring
 - `src/style.css` — responsive design
 - `supabase-setup.sql` — tables, private roles, scoring and room/chat functions
 - `.env.example` — example environment variables
